@@ -10,6 +10,7 @@ filetype indent on
 filetype on
 
 set background=dark
+colors desert
 set nobackup
 set nowritebackup
 set noswapfile
