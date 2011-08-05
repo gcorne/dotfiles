@@ -22,7 +22,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set autoindent
-set smarttab
 set backspace=indent,eol,start
 
 " Enable incremental search
@@ -36,9 +35,6 @@ set matchtime=2
 
 " Round indent to multiple of 'shiftwidth' for > and < commands
 set shiftround
-
-" Use 4 spaces for (auto)indent
-set shiftwidth=4
 
 " Show (partial) commands (or size of selection in Visual mode) in the status line
 set showcmd
