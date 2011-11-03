@@ -5,6 +5,8 @@ syntax on               " syntax highlighting
 
 set hlsearch            " highlight the last searched term
 
+set hidden				" allow a buffer with pending changes to be hidden
+
 filetype plugin on      " use the file type plugins
 filetype indent on
 filetype on
