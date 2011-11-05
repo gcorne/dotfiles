@@ -26,6 +26,9 @@ set softtabstop=4
 set autoindent
 set backspace=indent,eol,start
 
+" Search up the directory tree looking for tags file
+set tags=tags;
+
 " Enable incremental search
 set incsearch
 
