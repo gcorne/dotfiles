@@ -1,2 +1,4 @@
 .netrwhist
 .viminfo
+*.pyc
+*.pyo
