@@ -50,6 +50,9 @@ set showmatch
 " Ignore certain types of files on completion
 set wildignore+=*.o,*.obj,*.pyc,.git
 
+" Write with sudo ":w!!"
+cnoremap w!! w !sudo tee % >/dev/null
+
 
 " Remember things between sessions
 "
@@ -58,7 +61,7 @@ set wildignore+=*.o,*.obj,*.pyc,.git
 " :20  - remember 20 items in command-line history 
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
-set viminfo='20,\"50,:20,%,n~/.vim/.viminfo
+set viminfo='10000,\"50,:1000,%,n~/.vim/.viminfo
 
 " Set the <Leader> for combo commands
 let mapleader = ","
