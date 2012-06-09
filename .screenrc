@@ -1,0 +1,4 @@
+termcapinfo xterm ti@:te@
+defscrollback 30000
+termcapinfo xterm* OL=10000
+msgwait 0

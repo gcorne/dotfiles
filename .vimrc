@@ -7,9 +7,6 @@ set hlsearch            " highlight the last searched term
 
 set hidden				" allow a buffer with pending changes to be hidden
 
-filetype plugin on      " use the file type plugins
-filetype indent on
-filetype on
 
 set background=dark
 
@@ -27,7 +24,7 @@ set autoindent
 set backspace=indent,eol,start
 
 " Search up the directory tree looking for tags file
-set tags=tags;
+set tags=tags
 
 " set the names of flags
 let tlist_php_settings = 'php;c:class;f:function;d:constant'
@@ -85,6 +82,7 @@ autocmd BufReadPost *
 \ endif |
 \ endif
 
+filetype off
 " Setting up Vundle - the vim plugin bundler
 let vundle_installing=0
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
@@ -101,9 +99,11 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 "Add your bundles here
+Bundle 'VimClojure'
 Bundle 'tpope/vim-fugitive'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'brookhong/DBGPavim.git'
+Bundle 'jpalardy/vim-slime'
 
 "...All your other bundles...
 if vundle_installing == 1
@@ -116,7 +116,19 @@ endif
 " dbgPavim stuff
 " let g:dbgPavimBreakAtEntry = 1
 let g:dbgPavimPathMap = [['/Users/gcorne/Projects/wordpress/cms/branches/memcached','/fs/services/sandboxes/gcorne'],]
+filetype plugin on      " use the file type plugins
+filetype indent on
+filetype on
 
+
+" clojure
+let vimclojure#FuzzyIndent=1
+let vimclojure#HighlightBuiltins=1
+let vimclojure#HighlightContrib=1
+let vimclojure#DynamicHighlighting=1
+let vimclojure#ParenRainbow=1
+let vimclojure#WantNailgun = 1
+let vimclojure#NailgunClient = $HOME . "/bin/ng"
 " supercollider-related settings
 au BufWinEnter,BufNewFile,BufRead *.sc set filetype=supercollider
 au BufWinEnter,BufNewFile,BufRead *.sc let &iskeyword="@,48-57,_,192-255" | runtime ftplugin/supercollider.vim
