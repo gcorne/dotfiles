@@ -53,7 +53,6 @@ set wildignore+=*.o,*.obj,*.pyc,.git
 " Write with sudo ":w!!"
 cnoremap w!! w !sudo tee % >/dev/null
 
-
 " Remember things between sessions
 "
 " '20  - remember marks for 20 previous files
@@ -74,8 +73,35 @@ autocmd BufReadPost *
 \ endif |
 \ endif
 
+" Setting up Vundle - the vim plugin bundler
+let vundle_installing=0
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 
-" SuperCollider-related settings
+if !filereadable(vundle_readme)
+	echo "Installing Vundle.."
+	echo ""
+	silent !mkdir -p ~/.vim/bundle
+	silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+	let vundle_installing=1
+endif
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+"Add your bundles here
+Bundle 'tpope/vim-fugitive'
+Bundle 'git://git.wincent.com/command-t.git'
+
+"...All your other bundles...
+if vundle_installing == 1
+	echo "Installing Bundles, please ignore key map error messages"
+	echo ""
+	:BundleInstall
+endif
+" Setting up Vundle - the vim plugin bundler end
+
+
+" supercollider-related settings
 
 au BufWinEnter,BufNewFile,BufRead *.sc set filetype=supercollider
 au BufWinEnter,BufNewFile,BufRead *.sc let &iskeyword="@,48-57,_,192-255" | runtime ftplugin/supercollider.vim
