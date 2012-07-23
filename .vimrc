@@ -1,12 +1,11 @@
 set ai                  " auto indenting
-set history=100000         " keep 100 lines of history
+set history=100000      " keep ## lines of history
 set ruler               " show the cursor position
 syntax on               " syntax highlighting
 
 set hlsearch            " highlight the last searched term
 
 set hidden				" allow a buffer with pending changes to be hidden
-
 
 set background=dark
 
@@ -25,8 +24,6 @@ set backspace=indent,eol,start
 
 " Search up the directory tree looking for tags file
 set tags=tags
-
-
 
 " Enable incremental search
 set incsearch
@@ -91,9 +88,13 @@ Bundle 'gmarik/vundle'
 "Add your bundles here
 Bundle 'VimClojure'
 Bundle 'tpope/vim-fugitive'
-Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'brookhong/DBGPavim.git'
 Bundle 'jpalardy/vim-slime'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'mileszs/ack.vim'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'msanders/snipmate.vim'
 
 "...All your other bundles...
 if vundle_installing == 1
