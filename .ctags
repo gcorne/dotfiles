@@ -1,7 +1,7 @@
 -R
 --exclude=.svn
+--exclude=.git
+--links=no
 --tag-relative=yes
---PHP-kinds=+cf-v
---regex-PHP=/abstract\s+class\s+([^ ]+)/\1/c/
---regex-PHP=/interface\s+([^ ]+)/\1/c/
---regex-PHP=/(public\s+|static\s+|abstract\s+|protected\s+|private\s+)function\s+\&?\s*([^ (]+)/\2/f/
+--PHP-kinds=+c-f-v-j
+--regex-PHP=/(^[ \t]*)(public|protected|private)*[ \t]*(static|abstract)*[ \t]*function[ \t]+&?[[:blank:]]*([[:alpha:]][[:alnum:]_]*)/\4/f/
