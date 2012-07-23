@@ -26,16 +26,6 @@ set backspace=indent,eol,start
 " Search up the directory tree looking for tags file
 set tags=tags
 
-" set the names of flags
-let tlist_php_settings = 'php;c:class;f:function;d:constant'
-" close all folds except for current file
-let Tlist_File_Fold_Auto_Close = 1
-" make tlist pane active when opened
-let Tlist_GainFocus_On_ToggleOpen = 1
-" width of window
-let Tlist_WinWidth = 40
-" close tlist when a selection is made
-let Tlist_Close_On_Select = 1
 
 
 " Enable incremental search
@@ -129,6 +119,19 @@ let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
 let vimclojure#WantNailgun = 1
 let vimclojure#NailgunClient = $HOME . "/bin/ng"
+
+" TagList
+" set the names of flags
+let tlist_php_settings = 'php;c:class;f:function;d:constant'
+" close all folds except for current file
+let Tlist_File_Fold_Auto_Close = 1
+" make tlist pane active when opened
+let Tlist_GainFocus_On_ToggleOpen = 1
+" width of window
+let Tlist_WinWidth = 40
+" close tlist when a selection is made
+let Tlist_Close_On_Select = 1
+
 " supercollider-related settings
 au BufWinEnter,BufNewFile,BufRead *.sc set filetype=supercollider
 au BufWinEnter,BufNewFile,BufRead *.sc let &iskeyword="@,48-57,_,192-255" | runtime ftplugin/supercollider.vim
