@@ -1,5 +1,5 @@
 set ai                  " auto indenting
-set history=100         " keep 100 lines of history
+set history=100000         " keep 100 lines of history
 set ruler               " show the cursor position
 syntax on               " syntax highlighting
 
@@ -28,6 +28,18 @@ set backspace=indent,eol,start
 
 " Search up the directory tree looking for tags file
 set tags=tags;
+
+" set the names of flags
+let tlist_php_settings = 'php;c:class;f:function;d:constant'
+" close all folds except for current file
+let Tlist_File_Fold_Auto_Close = 1
+" make tlist pane active when opened
+let Tlist_GainFocus_On_ToggleOpen = 1
+" width of window
+let Tlist_WinWidth = 40
+" close tlist when a selection is made
+let Tlist_Close_On_Select = 1
+
 
 " Enable incremental search
 set incsearch
@@ -91,6 +103,7 @@ Bundle 'gmarik/vundle'
 "Add your bundles here
 Bundle 'tpope/vim-fugitive'
 Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'brookhong/DBGPavim.git'
 
 "...All your other bundles...
 if vundle_installing == 1
@@ -100,9 +113,11 @@ if vundle_installing == 1
 endif
 " Setting up Vundle - the vim plugin bundler end
 
+" dbgPavim stuff
+" let g:dbgPavimBreakAtEntry = 1
+let g:dbgPavimPathMap = [['/Users/gcorne/Projects/wordpress/cms/branches/memcached','/fs/services/sandboxes/gcorne'],]
 
 " supercollider-related settings
-
 au BufWinEnter,BufNewFile,BufRead *.sc set filetype=supercollider
 au BufWinEnter,BufNewFile,BufRead *.sc let &iskeyword="@,48-57,_,192-255" | runtime ftplugin/supercollider.vim
 au BufWinEnter,BufNewFile,BufRead *.sc set sw=4 ts=4 autoindent "this line can be changed however you like

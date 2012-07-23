@@ -92,11 +92,11 @@ let g:pdv_cfg_Copyright = "Copyright (C) 2010 Andrei Zmievski"
 " Exuberant Ctags
 "
 " Map <F4> to re-build tags file
-nmap <silent> <F4>
-		\ :!ctags -f ./tags 
-		\ --langmap="php:+.inc"
-		\ -h ".php.inc" -R --totals=yes
-		\ --tag-relative=yes --PHP-kinds=+cf-v .<CR>
+"nmap <silent> <F4>
+"		\ :!ctags -f ./tags 
+"		\ --langmap="php:+.inc"
+"		\ -h ".php.inc" -R --totals=yes
+"		\ --tag-relative=yes --PHP-kinds=+cf-v .<CR>
 
 " Set tag filename(s)
 set tags=./tags,tags
