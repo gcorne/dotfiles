@@ -3,5 +3,4 @@
 --exclude=.git
 --links=no
 --tag-relative=yes
---PHP-kinds=+c-f-v-j
---regex-PHP=/(^[ \t]*)(public|protected|private)*[ \t]*(static|abstract)*[ \t]*function[ \t]+&?[[:blank:]]*([[:alpha:]][[:alnum:]_]*)/\4/f/
+--PHP-kinds=+cf-v

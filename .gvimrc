@@ -9,5 +9,4 @@ set lines=180
 set columns=174
 vmap <D-]> >gv
 vmap <D-[> <gv
-map <D-t> :CommandT<CR>
 

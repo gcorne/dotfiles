@@ -28,16 +28,6 @@ let php_noShortTags = 1
 " Highlighti SQL inside PHP strings
 let php_sql_query=1
 
-
-"
-" Linting
-"
-" Use PHP syntax check when doing :make
-set makeprg=php\ -l\ %
-
-" Parse PHP error output
-set errorformat=%m\ in\ %f\ on\ line\ %l
-
 " Function to locate endpoints of a PHP block {{{
 function! PhpBlockSelect(mode)
 	let motion = "v"
@@ -81,25 +71,16 @@ omap <silent> aP :silent normal vaP<CR>
 omap <silent> iP :silent normal viP<CR>
 
 " Mappings for PHP Documentor for VIM
-inoremap <buffer> <C-P> <Esc>:call PhpDocSingle()<CR>i
-nnoremap <buffer> <C-P> :call PhpDocSingle()<CR>
-vnoremap <buffer> <C-P> :call PhpDocRange()<CR>
+inoremap <buffer> <c-e> <Esc>:call PhpDocSingle()<CR>i
+nnoremap <buffer> <c-e> :call PhpDocSingle()<CR>
+vnoremap <buffer> <c-e> :call PhpDocRange()<CR>
 " Generate @uses tag based on inheritance info
 let g:pdv_cfg_Uses = 1
 " Set default Copyright
 let g:pdv_cfg_Copyright = "Copyright (C) 2010 Andrei Zmievski"
 
-" Exuberant Ctags
-"
-" Map <F4> to re-build tags file
-"nmap <silent> <F4>
-"		\ :!ctags -f ./tags 
-"		\ --langmap="php:+.inc"
-"		\ -h ".php.inc" -R --totals=yes
-"		\ --tag-relative=yes --PHP-kinds=+cf-v .<CR>
-
 " Set tag filename(s)
-set tags=./tags,tags
+" set tags=./tags,tags
 
 " Enable listchars, list to see non-printable symbols
 " set listchars=tab:►·,trail:·,eol:↲

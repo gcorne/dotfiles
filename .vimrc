@@ -23,7 +23,7 @@ set autoindent
 set backspace=indent,eol,start
 
 " Search up the directory tree looking for tags file
-set tags=tags
+" set tags=tags
 
 " Enable incremental search
 set incsearch
@@ -111,7 +111,6 @@ filetype plugin on      " use the file type plugins
 filetype indent on
 filetype on
 
-
 " clojure
 let vimclojure#FuzzyIndent=1
 let vimclojure#HighlightBuiltins=1
@@ -122,6 +121,10 @@ let vimclojure#WantNailgun = 1
 let vimclojure#NailgunClient = $HOME . "/bin/ng"
 
 " TagList
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+" Displaying tags for only one file
+let Tlist_Show_One_File = 1 
+" let Tlist_Process_File_Always = 1
 " set the names of flags
 let tlist_php_settings = 'php;c:class;f:function;d:constant'
 " close all folds except for current file
@@ -132,6 +135,12 @@ let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_WinWidth = 40
 " close tlist when a selection is made
 let Tlist_Close_On_Select = 1
+
+" CtrlP
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_use_caching = 1
+let g:ctrlp_working_path_mode = 0
+
 
 " supercollider-related settings
 au BufWinEnter,BufNewFile,BufRead *.sc set filetype=supercollider
