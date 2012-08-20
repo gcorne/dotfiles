@@ -56,7 +56,7 @@ cnoremap w!! w !sudo tee % >/dev/null
 " :20  - remember 20 items in command-line history 
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
-set viminfo='10000,\"50,:1000,%,n~/.vim/.viminfo
+set viminfo='20,\"50,:1000,%,n~/.vim/.viminfo
 
 " Set the <Leader> for combo commands
 let mapleader = ","
