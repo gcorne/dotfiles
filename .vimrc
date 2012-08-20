@@ -86,15 +86,25 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 "Add your bundles here
+
+" Clojure
 Bundle 'VimClojure'
-Bundle 'tpope/vim-fugitive'
-Bundle 'brookhong/DBGPavim.git'
+" Bundle to provide REPL like functionality
 Bundle 'jpalardy/vim-slime'
+
+Bundle 'tpope/vim-fugitive'
+
+" debugger for PHP+Xdebug
+Bundle 'brookhong/DBGPavim.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'msanders/snipmate.vim'
+
+" ruby bundles
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'm2ym/rsense'
 
 "...All your other bundles...
 if vundle_installing == 1
@@ -107,7 +117,7 @@ endif
 " dbgPavim stuff
 " let g:dbgPavimBreakAtEntry = 1
 let g:dbgPavimPathMap = [['/Users/gcorne/Projects/wordpress/cms/branches/memcached','/fs/services/sandboxes/gcorne'],]
-filetype plugin on      " use the file type plugins
+filetype plugin on " use the file type plugins
 filetype indent on
 filetype on
 
