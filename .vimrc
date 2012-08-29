@@ -3,10 +3,19 @@ set history=100000      " keep ## lines of history
 set ruler               " show the cursor position
 syntax on               " syntax highlighting
 
+
+" search settings
+nnoremap / /\v			" use normal regex formatting
+vnoremap / /\v
+set ignorecase
+set smartcase			" if lowercase, case insensitve else case sensitive
+set gdefault			" apply substitutions globally
 set hlsearch            " highlight the last searched term
+set incsearch			" Enable incremental search
+
+nnoremap <leader><space> :noh<cr> " clear search highlighting quickly
 
 set hidden				" allow a buffer with pending changes to be hidden
-
 set background=dark
 
 colorscheme desert
@@ -22,11 +31,13 @@ set softtabstop=4
 set autoindent
 set backspace=indent,eol,start
 
-" Search up the directory tree looking for tags file
-" set tags=tags
+" show hidden characters
+set list
+set listchars=tab:▸\ ,eol:¬
 
-" Enable incremental search
-set incsearch
+" Search up the directory tree looking for tags file
+set tags=tags
+
 
 " Always show status line, even for one window
 set laststatus=2
@@ -49,6 +60,19 @@ set wildignore+=*.o,*.obj,*.pyc,.git
 " Write with sudo ":w!!"
 cnoremap w!! w !sudo tee % >/dev/null
 
+" strip all whitespace from current file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
+
+" Ack shortcut
+nnoremap <leader>a :Ack
+
+" window navigation
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
+
+
 " Remember things between sessions
 "
 " '20  - remember marks for 20 previous files
@@ -68,6 +92,8 @@ autocmd BufReadPost *
 \ exe "normal g'\"" |
 \ endif |
 \ endif
+
+
 
 filetype off
 " Setting up Vundle - the vim plugin bundler
@@ -148,7 +174,7 @@ let Tlist_Close_On_Select = 1
 
 " CtrlP
 let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_use_caching = 1
+"let g:ctrlp_use_caching = 1
 let g:ctrlp_working_path_mode = 0
 
 

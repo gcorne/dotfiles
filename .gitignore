@@ -4,7 +4,5 @@
 *.pyo
 *.o
 bundle
-ruby/command-t/Makefile
-ruby/command-t/ext.bundle
 *.log
 *.tmp
