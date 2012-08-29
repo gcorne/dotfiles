@@ -75,12 +75,12 @@ nnoremap <leader>l <C-w>l
 
 " Remember things between sessions
 "
-" '20  - remember marks for 20 previous files
+" '100  - remember marks for 100 previous files
 " \"50 - save 50 lines for each register
-" :20  - remember 20 items in command-line history 
+" :1000  - remember 1000 items in command-line history 
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
-set viminfo='20,\"50,:1000,%,n~/.vim/.viminfo
+set viminfo='100,\"50,:1000,%,n~/.vim/.viminfo
 
 " Set the <Leader> for combo commands
 let mapleader = ","
@@ -142,7 +142,7 @@ endif
 
 " dbgPavim stuff
 " let g:dbgPavimBreakAtEntry = 1
-let g:dbgPavimPathMap = [['/Users/gcorne/Projects/wordpress/cms/branches/memcached','/fs/services/sandboxes/gcorne'],]
+" let g:dbgPavimPathMap = [['/Users/gcorne/Projects/wordpress/cms/branches/memcached','/fs/services/sandboxes/gcorne'],]
 filetype plugin on " use the file type plugins
 filetype indent on
 filetype on
