@@ -5,7 +5,9 @@ syntax on               " syntax highlighting
 
 
 " search settings
-nnoremap / /\v			" use normal regex formatting
+
+" use normal regex formatting
+nnoremap / /\v
 vnoremap / /\v
 set ignorecase
 set smartcase			" if lowercase, case insensitve else case sensitive
@@ -13,7 +15,8 @@ set gdefault			" apply substitutions globally
 set hlsearch            " highlight the last searched term
 set incsearch			" Enable incremental search
 
-nnoremap <leader><space> :noh<cr> " clear search highlighting quickly
+" clear search highlighting quickly
+nnoremap <leader><space> :noh<cr>
 
 set hidden				" allow a buffer with pending changes to be hidden
 set background=dark
@@ -55,16 +58,19 @@ set showcmd
 set showmatch
 
 " Ignore certain types of files on completion
-set wildignore+=*.o,*.obj,*.pyc,.git
+set wildignore+=*.o,*.obj,*.pyc,.git,.svn
 
 " Write with sudo ":w!!"
 cnoremap w!! w !sudo tee % >/dev/null
 
 " strip all whitespace from current file
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<cr>
+nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 
 " Ack shortcut
 nnoremap <leader>a :Ack
+
+" TList shortcut
+nnoremap <leader>t :Tlist
 
 " window navigation
 nnoremap <leader>h <C-w>h
