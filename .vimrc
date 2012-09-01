@@ -34,9 +34,6 @@ set softtabstop=4
 set autoindent
 set backspace=indent,eol,start
 
-" show hidden characters
-set list
-set listchars=tab:▸\ ,eol:¬
 
 " Search up the directory tree looking for tags file
 set tags=tags
@@ -63,6 +60,18 @@ set wildignore+=*.o,*.obj,*.pyc,.git,.svn
 " Write with sudo ":w!!"
 cnoremap w!! w !sudo tee % >/dev/null
 
+" Remember things between sessions
+"
+" '100  - remember marks for 100 previous files
+" \"50 - save 50 lines for each register
+" :1000  - remember 1000 items in command-line history 
+" %    - remember the buffer list (if vim started without a file arg)
+" n    - set name of viminfo file
+set viminfo='100,\"50,:1000,%,n~/.vim/.viminfo
+
+" Set the <Leader> for combo commands
+let mapleader = ","
+
 " strip all whitespace from current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 
@@ -77,19 +86,6 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
-
-
-" Remember things between sessions
-"
-" '100  - remember marks for 100 previous files
-" \"50 - save 50 lines for each register
-" :1000  - remember 1000 items in command-line history 
-" %    - remember the buffer list (if vim started without a file arg)
-" n    - set name of viminfo file
-set viminfo='100,\"50,:1000,%,n~/.vim/.viminfo
-
-" Set the <Leader> for combo commands
-let mapleader = ","
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
