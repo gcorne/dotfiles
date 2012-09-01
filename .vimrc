@@ -3,7 +3,6 @@ set history=100000      " keep ## lines of history
 set ruler               " show the cursor position
 syntax on               " syntax highlighting
 
-
 " search settings
 
 " use normal regex formatting
@@ -76,10 +75,10 @@ let mapleader = ","
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 
 " Ack shortcut
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack 
 
 " TList shortcut
-nnoremap <leader>t :Tlist
+nnoremap <leader>t :Tlist<cr>
 
 " window navigation
 nnoremap <leader>h <C-w>h
@@ -94,8 +93,6 @@ autocmd BufReadPost *
 \ exe "normal g'\"" |
 \ endif |
 \ endif
-
-
 
 filetype off
 " Setting up Vundle - the vim plugin bundler
