@@ -20,7 +20,7 @@ nnoremap <leader><space> :noh<cr>
 set hidden				" allow a buffer with pending changes to be hidden
 set background=dark
 
-colorscheme desert
+colorscheme Tomorrow-Night
 set nobackup
 set nowritebackup
 set noswapfile
@@ -127,6 +127,7 @@ Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'msanders/snipmate.vim'
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 
 " ruby bundles
 Bundle 'vim-ruby/vim-ruby'
