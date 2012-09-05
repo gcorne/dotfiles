@@ -35,7 +35,7 @@ set backspace=indent,eol,start
 
 
 " Search up the directory tree looking for tags file
-set tags=tags
+set tags=./tags;/
 
 
 " Always show status line, even for one window
