@@ -37,6 +37,7 @@ set backspace=indent,eol,start
 " Search up the directory tree looking for tags file
 set tags=./tags;/
 
+set winminheight=0
 
 " Always show status line, even for one window
 set laststatus=2
