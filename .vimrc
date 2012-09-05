@@ -64,7 +64,7 @@ cnoremap w!! w !sudo tee % >/dev/null
 "
 " '100  - remember marks for 100 previous files
 " \"50 - save 50 lines for each register
-" :1000  - remember 1000 items in command-line history 
+" :1000  - remember 1000 items in command-line history
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
 set viminfo='100,\"50,:1000,%,n~/.vim/.viminfo
@@ -161,7 +161,7 @@ let vimclojure#NailgunClient = $HOME . "/bin/ng"
 " TagList
 let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
 " Displaying tags for only one file
-let Tlist_Show_One_File = 1 
+let Tlist_Show_One_File = 1
 " let Tlist_Process_File_Always = 1
 " set the names of flags
 let tlist_php_settings = 'php;c:class;f:function;d:constant'
