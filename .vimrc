@@ -20,7 +20,6 @@ nnoremap <leader><space> :noh<cr>
 set hidden				" allow a buffer with pending changes to be hidden
 set background=dark
 
-colorscheme Tomorrow-Night
 set nobackup
 set nowritebackup
 set noswapfile
@@ -146,6 +145,8 @@ endif
 filetype plugin on " use the file type plugins
 filetype indent on
 filetype on
+
+colorscheme Tomorrow-Night
 
 " clojure
 let vimclojure#FuzzyIndent=1
