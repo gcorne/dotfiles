@@ -3,7 +3,7 @@ set history=100000      " keep ## lines of history
 set ruler               " show the cursor position
 syntax on               " syntax highlighting
 
-" search settings
+let mapleader = ","
 
 " use normal regex formatting
 nnoremap / /\v
@@ -69,8 +69,6 @@ cnoremap w!! w !sudo tee % >/dev/null
 " n    - set name of viminfo file
 set viminfo='100,\"50,:1000,%,n~/.vim/.viminfo
 
-" Set the <Leader> for combo commands
-let mapleader = ","
 
 " strip all whitespace from current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
