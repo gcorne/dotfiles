@@ -78,6 +78,9 @@ nnoremap <leader>a :Ack
 " TList shortcut
 nnoremap <leader>t :Tlist<cr>
 
+" List active buffers (requires CtrlP plugin)
+nnoremap <leader>b :CtrlPBuffer<cr>
+
 " window navigation
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
