@@ -182,16 +182,3 @@ let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_working_path_mode = 0
 
 
-" supercollider-related settings
-au BufWinEnter,BufNewFile,BufRead *.sc set filetype=supercollider
-au BufWinEnter,BufNewFile,BufRead *.sc let &iskeyword="@,48-57,_,192-255" | runtime ftplugin/supercollider.vim
-au BufWinEnter,BufNewFile,BufRead *.sc set sw=4 ts=4 autoindent "this line can be changed however you like
-
-"sc help files
-au BufWinEnter,BufNewFile,BufRead *.scd set filetype=supercollider
-au BufWinEnter,BufNewFile,BufRead *.scd let &iskeyword="@,48-57,_,192-255,-,|" | runtime ftplugin/supercollider.vim
-au BufWinEnter,BufNewFile,BufRead *.scd set sw=4 ts=4 autoindent "this line can be changed however you like
-
-"required for matching
-au Filetype supercollider,supercollider_help let b:match_skip = 's:scComment\|scString\|scSymbol'
-au Filetype supercollider,supercollider_help let b:match_words = '(:),[:],{:}'
