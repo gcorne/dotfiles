@@ -130,6 +130,9 @@ Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+" PHP Bundles
+" autocomplete for PHP
+Bundle 'shawncplus/phpcomplete.vim'
 
 " ruby bundles
 Bundle 'vim-ruby/vim-ruby'
