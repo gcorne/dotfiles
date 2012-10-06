@@ -112,17 +112,7 @@ endif
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-"Add your bundles here
 
-" Clojure
-Bundle 'VimClojure'
-" Bundle to provide REPL like functionality
-Bundle 'jpalardy/vim-slime'
-
-Bundle 'tpope/vim-fugitive'
-
-" debugger for PHP+Xdebug
-Bundle 'brookhong/DBGPavim.git'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'bronson/vim-trailing-whitespace'
@@ -130,9 +120,19 @@ Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/taglist.vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+" Git integration
+Bundle 'tpope/vim-fugitive'
+
+" Clojure
+Bundle 'VimClojure'
+" Bundle to provide REPL like functionality
+Bundle 'jpalardy/vim-slime'
+
 " PHP Bundles
 " autocomplete for PHP
 Bundle 'shawncplus/phpcomplete.vim'
+" debugger for PHP+Xdebug
+Bundle 'brookhong/DBGPavim.git'
 " improved PHP code folding
 Bundle 'gcorne/phpfolding.vim'
 
