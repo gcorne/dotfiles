@@ -14,9 +14,10 @@ set textwidth=80
 "
 " Syntax options
 "
-" Enable folding of class/function blocks
-
-" let php_folding = 1
+" Don't use the PHP syntax folding
+setlocal foldmethod=manual
+" Turn on PHP fast folds
+EnableFastPHPFolds
 
 " Do not use short tags to find PHP blocks
 let php_noShortTags = 1

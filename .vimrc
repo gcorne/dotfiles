@@ -133,6 +133,8 @@ Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 " PHP Bundles
 " autocomplete for PHP
 Bundle 'shawncplus/phpcomplete.vim'
+" improved PHP code folding
+Bundle 'gcorne/phpfolding.vim'
 
 " ruby bundles
 Bundle 'vim-ruby/vim-ruby'
