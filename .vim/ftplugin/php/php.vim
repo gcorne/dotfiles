@@ -8,10 +8,6 @@ source ~/.vim/php-doc.vim
 " Set up automatic formatting
 set formatoptions+=tcqlro
 
-" Jump to matching bracket for 3/10th of a second (works with showmatch)
-set matchtime=3
-set showmatch
-
 " Set maximum text width (for wrapping)
 set textwidth=80
 
@@ -76,14 +72,4 @@ nnoremap <buffer> <c-e> :call PhpDocSingle()<CR>
 vnoremap <buffer> <c-e> :call PhpDocRange()<CR>
 " Generate @uses tag based on inheritance info
 let g:pdv_cfg_Uses = 1
-" Set default Copyright
-let g:pdv_cfg_Copyright = "Copyright (C) 2010 Andrei Zmievski"
 
-" Set tag filename(s)
-" set tags=./tags,tags
-
-" Enable listchars, list to see non-printable symbols
-" set listchars=tab:►·,trail:·,eol:↲
-" set list
-
-" vim: set fdm=marker:
