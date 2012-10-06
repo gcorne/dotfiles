@@ -37,6 +37,7 @@ set backspace=indent,eol,start
 set tags=./tags;/
 
 set winminheight=0
+set winminwidth=0
 
 " Always show status line, even for one window
 set laststatus=2
