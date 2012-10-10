@@ -1,5 +1,5 @@
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
-export PS1='[\T] \h:\w \$ '
+export PS1='\h:\w \$ '
 export EDITOR=vim
 
 set -o noclobber
@@ -7,6 +7,7 @@ set -o noclobber
 alias qlf='qlmanage -p "$@" >& /dev/null'
 
 export HISTSIZE=100000
+export HISTTIMEFORMAT="%F %R%z "
 export HISTCONTROL=ignoredups
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
