@@ -1,5 +1,5 @@
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
-
+export PS1='[\T] \h:\w \$ '
 export EDITOR=vim
 
 set -o noclobber
