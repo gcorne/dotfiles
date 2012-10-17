@@ -24,14 +24,11 @@ set nobackup
 set nowritebackup
 set noswapfile
 
-set lines=40
-set columns=80
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set autoindent
 set backspace=indent,eol,start
-
 
 " Search up the directory tree looking for tags file
 set tags=./tags;/
