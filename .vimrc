@@ -121,9 +121,9 @@ Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'tpope/vim-fugitive'
 
 " Clojure
-Bundle 'VimClojure'
+" Bundle 'VimClojure'
 " Bundle to provide REPL like functionality
-Bundle 'jpalardy/vim-slime'
+" Bundle 'jpalardy/vim-slime'
 
 " PHP Bundles
 " autocomplete for PHP
@@ -134,8 +134,8 @@ Bundle 'brookhong/DBGPavim.git'
 Bundle 'gcorne/phpfolding.vim'
 
 " ruby bundles
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'm2ym/rsense'
+" Bundle 'vim-ruby/vim-ruby'
+" Bundle 'm2ym/rsense'
 
 "...All your other bundles...
 if vundle_installing == 1
