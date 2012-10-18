@@ -41,4 +41,4 @@ export COLOR_LIGHT_GRAY='e[0;37m'
 alias colorslist="set | egrep 'COLOR_w*'"
 
 # Load a local configuration file if it exists
-[ -r ~/.local ] && source ~/.local
+[ -r ~/.bash_local ] && source ~/.bash_local
