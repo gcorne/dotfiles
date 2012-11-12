@@ -1,4 +1,4 @@
-[ -r ~/.bashrc ] && source . ~/.bashrc
+[ -r ~/.bashrc ] && source ~/.bashrc
 
 export PATH="$HOME/bin:/usr/local/bin:$PATH"
 export PS1='\h:\w\$ '
