@@ -5,9 +5,6 @@ syntax on               " syntax highlighting
 
 let mapleader = ","
 
-" use normal regex formatting
-nnoremap / /\v
-vnoremap / /\v
 set ignorecase
 set smartcase			" if lowercase, case insensitve else case sensitive
 set gdefault			" apply substitutions globally
