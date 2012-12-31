@@ -167,6 +167,7 @@ let Tlist_Show_One_File = 1
 " let Tlist_Process_File_Always = 1
 " set the names of flags
 let tlist_php_settings = 'php;c:class;f:function;d:constant'
+let tlist_javascript_settings = 'javascript;s:string;a:array;o:object;f:function'
 " close all folds except for current file
 let Tlist_File_Fold_Auto_Close = 1
 " make tlist pane active when opened
