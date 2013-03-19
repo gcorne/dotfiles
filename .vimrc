@@ -63,6 +63,9 @@ cnoremap w!! w !sudo tee % >/dev/null
 " n    - set name of viminfo file
 set viminfo='100,\"50,:1000,%,n~/.vim/.viminfo
 
+" Change how j and k behave when a line wraps
+nmap j gj
+nmap k gk
 
 " strip all whitespace from current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
