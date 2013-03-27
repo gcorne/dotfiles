@@ -142,11 +142,7 @@ if vundle_installing == 1
 	echo ""
 	:BundleInstall
 endif
-" Setting up Vundle - the vim plugin bundler end
 
-" dbgPavim stuff
-" let g:dbgPavimBreakAtEntry = 1
-" let g:dbgPavimPathMap = [['/Users/gcorne/Projects/wordpress/cms/branches/memcached','/fs/services/sandboxes/gcorne'],]
 filetype plugin on " use the file type plugins
 filetype indent on
 filetype on
