@@ -54,6 +54,10 @@ set wildignore+=*.o,*.obj,*.pyc,.git,.svn
 " Write with sudo ":w!!"
 cnoremap w!! w !sudo tee % >/dev/null
 
+" Change how j and k behave when a line wraps 
+nmap j gj
+nmap k gk
+
 " Remember things between sessions
 "
 " '100  - remember marks for 100 previous files
