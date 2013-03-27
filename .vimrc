@@ -11,6 +11,8 @@ set gdefault			" apply substitutions globally
 set hlsearch            " highlight the last searched term
 set incsearch			" Enable incremental search
 
+set list
+set listchars=tab:▸\ ,eol:¬
 " clear search highlighting quickly
 nnoremap <leader><space> :noh<cr>
 
@@ -67,6 +69,9 @@ nmap k gk
 " n    - set name of viminfo file
 set viminfo='100,\"50,:1000,%,n~/.vim/.viminfo
 
+" Change how j and k behave when a line wraps
+nmap j gj
+nmap k gk
 
 " strip all whitespace from current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
