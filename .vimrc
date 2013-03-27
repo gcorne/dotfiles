@@ -116,11 +116,9 @@ Bundle 'msanders/snipmate.vim'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 " Git integration
 Bundle 'tpope/vim-fugitive'
-
-" Clojure
-" Bundle 'VimClojure'
-" Bundle to provide REPL like functionality
-" Bundle 'jpalardy/vim-slime'
+Bundle 'tpope/vim-unimpaired'
+" Bundle 'majutsushi/tagbar'
+" Bundle 'techlivezheng/tagbar-phpctags'
 
 " PHP Bundles
 " autocomplete for PHP
