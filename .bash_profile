@@ -42,5 +42,9 @@ export COLOR_LIGHT_GRAY='e[0;37m'
 
 alias colorslist="set | egrep 'COLOR_w*'"
 
+gitbranches() {
+	for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r
+}
+
 # Load a local configuration file if it exists
 [ -r ~/.bash_local ] && source ~/.bash_local
