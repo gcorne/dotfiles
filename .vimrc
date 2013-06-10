@@ -141,6 +141,10 @@ Bundle 'gcorne/phpfolding.vim'
 " Bundle 'vim-ruby/vim-ruby'
 " Bundle 'm2ym/rsense'
 
+" Clojure bundles
+Bundle 'tpope/vim-fireplace'
+Bundle 'guns/vim-clojure-static'
+
 "...All your other bundles...
 if vundle_installing == 1
 	echo "Installing Bundles, please ignore key map error messages"
