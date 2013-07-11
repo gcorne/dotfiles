@@ -29,6 +29,15 @@ set softtabstop=4
 set autoindent
 set backspace=indent,eol,start
 
+function! SetTwoSpace()
+	setlocal tabstop=2
+	setlocal softtabstop=2
+	setlocal shiftwidth=2
+	setlocal smarttab
+	setlocal expandtab
+endfunction
+nnoremap <leader>2 :call SetTwoSpace()
+
 " Search up the directory tree looking for tags file
 set tags=./tags;/
 
