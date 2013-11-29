@@ -148,12 +148,13 @@ Bundle 'tpope/vim-unimpaired'
 
 " PHP Bundles
 " autocomplete for PHP
-Bundle 'shawncplus/phpcomplete.vim'
+"Bundle 'shawncplus/phpcomplete.vim'
 " debugger for PHP+Xdebug
 Bundle 'brookhong/DBGPavim.git'
 " improved PHP code folding
-Bundle 'gcorne/phpfolding.vim'
-
+"Bundle 'gcorne/phpfolding.vim'
+Bundle 'spf13/PIV'
+Bundle 'ervandew/supertab'
 " ruby bundles
 " Bundle 'vim-ruby/vim-ruby'
 " Bundle 'm2ym/rsense'
