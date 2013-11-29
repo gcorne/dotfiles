@@ -1,6 +1,7 @@
 -R
 --exclude=.svn
 --exclude=.git
+--exclude=*.min.js
 --links=no
 --tag-relative=yes
 --PHP-kinds=+cf-v
