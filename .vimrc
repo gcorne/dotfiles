@@ -11,8 +11,6 @@ set gdefault			" apply substitutions globally
 set hlsearch            " highlight the last searched term
 set incsearch			" Enable incremental search
 
-set list
-set listchars=tab:▸\ ,eol:¬
 " clear search highlighting quickly
 nnoremap <leader><space> :noh<cr>
 
