@@ -208,14 +208,14 @@ let Tlist_WinWidth = 40
 let Tlist_Close_On_Select = 1
 let Tlist_Display_Tag_Scope = 1
 
+"Use jshint for javascript syntax checking
+let g:syntastic_javascript_checkers = ['jshint']
+
 " CtrlP
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_use_caching = 1
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_max_files = 0
 
-
-" VimFugitive
+" Clean up VimFugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
-
-
