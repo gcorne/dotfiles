@@ -30,7 +30,9 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set autoindent
+set noexpandtab
 set backspace=indent,eol,start
+set wrap
 
 function! SetTwoSpace()
 	setlocal tabstop=2
