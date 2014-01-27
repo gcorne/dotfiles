@@ -148,6 +148,7 @@ Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 " Git integration
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-markdown'
 " Bundle 'majutsushi/tagbar'
 " Bundle 'techlivezheng/tagbar-phpctags'
 
