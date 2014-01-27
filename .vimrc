@@ -17,6 +17,11 @@ nnoremap <leader><space> :noh<cr>
 set hidden				" allow a buffer with pending changes to be hidden
 set background=dark
 
+" disable error sounds
+set noerrorbells
+set visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
 set nobackup
 set nowritebackup
 set noswapfile
