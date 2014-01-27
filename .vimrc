@@ -158,7 +158,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'brookhong/DBGPavim.git'
 " improved PHP code folding
 "Bundle 'gcorne/phpfolding.vim'
-Bundle 'spf13/PIV'
+Bundle 'gcorne/PIV'
 Bundle 'ervandew/supertab'
 " ruby bundles
 " Bundle 'vim-ruby/vim-ruby'
