@@ -51,6 +51,7 @@ function! SetFourSpace()
 	setlocal expandtab
 endfunction
 nnoremap <leader>4 :call SetTwoSpace()
+
 " Search up the directory tree looking for tags file
 set tags=./tags;/
 
@@ -78,7 +79,7 @@ set wildignore+=*.o,*.obj,*.pyc,.git,.svn
 " Write with sudo ":w!!"
 cnoremap w!! w !sudo tee % >/dev/null
 
-" Change how j and k behave when a line wraps 
+" Change how j and k behave when a line wraps
 nmap j gj
 nmap k gk
 
@@ -90,10 +91,6 @@ nmap k gk
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
 set viminfo='100,\"50,:1000,%,n~/.vim/.viminfo
-
-" Change how j and k behave when a line wraps
-nmap j gj
-nmap k gk
 
 " strip all whitespace from current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
