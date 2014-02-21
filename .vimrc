@@ -150,17 +150,9 @@ Bundle 'tpope/vim-markdown'
 " Bundle 'techlivezheng/tagbar-phpctags'
 
 " PHP Bundles
-" autocomplete for PHP
-"Bundle 'shawncplus/phpcomplete.vim'
 " debugger for PHP+Xdebug
 Bundle 'brookhong/DBGPavim.git'
-" improved PHP code folding
-"Bundle 'gcorne/phpfolding.vim'
 Bundle 'gcorne/PIV'
-Bundle 'ervandew/supertab'
-" ruby bundles
-" Bundle 'vim-ruby/vim-ruby'
-" Bundle 'm2ym/rsense'
 
 " Clojure bundles
 Bundle 'tpope/vim-fireplace'
@@ -187,6 +179,10 @@ let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
 let vimclojure#WantNailgun = 1
 let vimclojure#NailgunClient = $HOME . "/bin/ng"
+
+" PHP
+let g:DisableAutoPHPFolding = 1
+
 
 " TagList
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
