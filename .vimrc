@@ -181,8 +181,7 @@ let vimclojure#WantNailgun = 1
 let vimclojure#NailgunClient = $HOME . "/bin/ng"
 
 " PHP
-let g:DisableAutoPHPFolding = 1
-
+autocmd Syntax php normal zR
 
 " TagList
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
