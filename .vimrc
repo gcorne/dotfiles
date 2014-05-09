@@ -119,6 +119,7 @@ autocmd BufReadPost *
 \ endif
 
 filetype off
+
 " Setting up Vundle - the vim plugin bundler
 let vundle_installing=0
 let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
@@ -133,32 +134,17 @@ endif
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-Bundle 'gmarik/vundle'
 
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'mileszs/ack.vim'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
-" Git integration
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-markdown'
-" Bundle 'majutsushi/tagbar'
-" Bundle 'techlivezheng/tagbar-phpctags'
+" load Vundle bundles
+if filereadable(expand("~/.dotfiles/bundles.vim"))
+  source ~/.dotfiles/bundles.vim
+endif
 
-" PHP Bundles
-" debugger for PHP+Xdebug
-Bundle 'brookhong/DBGPavim.git'
-Bundle 'gcorne/PIV'
+if filereadable(expand("~/.dotfiles/bundles-local.vim"))
+  source ~/.dotfiles/bundles-local.vim
+endif
 
-" Clojure bundles
-Bundle 'tpope/vim-fireplace'
-Bundle 'guns/vim-clojure-static'
-
-"...All your other bundles...
+" install bundles for the first time
 if vundle_installing == 1
 	echo "Installing Bundles, please ignore key map error messages"
 	echo ""
