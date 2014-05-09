@@ -206,3 +206,8 @@ endif
 
 " Clean up VimFugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" Load local vim config
+if filereadable(expand("~/.dotfiles/local.vim"))
+	source ~/.dotfiles/local.vim
+endif
