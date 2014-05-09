@@ -34,6 +34,9 @@ set noexpandtab
 set backspace=indent,eol,start
 set wrap
 
+set mouse=a              " Enable basic mouse behavior such as resizing buffers.
+set clipboard=unnamed    " yank and paste with the system clipboard
+
 function! SetTwoSpace()
 	setlocal tabstop=2
 	setlocal softtabstop=2
@@ -109,6 +112,11 @@ nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
+
+nnoremap <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
+nnoremap <leader>g :GitGutterToggle<CR>
+nnoremap <leader>] :TagbarToggle<CR>
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
