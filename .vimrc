@@ -203,6 +203,11 @@ let g:syntastic_javascript_checkers = ['jshint']
 "Hide help hint
 let NERDTreeMinimalUI=1
 
+"GitGutter
+"
+"Disable by default
+let g:gitgutter_enabled = 0
+
 " CtrlP
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_use_caching = 1
