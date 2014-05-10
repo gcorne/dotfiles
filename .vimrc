@@ -115,7 +115,7 @@ nnoremap <leader>l <C-w>l
 
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
-nnoremap <leader>g :GitGutterToggle<CR>
+nnoremap <leader>g :set number!<CR>:GitGutterToggle<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 
 " When editing a file, always jump to the last cursor position
