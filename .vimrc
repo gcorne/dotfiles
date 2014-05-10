@@ -198,6 +198,11 @@ let Tlist_Display_Tag_Scope = 1
 "Use jshint for javascript syntax checking
 let g:syntastic_javascript_checkers = ['jshint']
 
+"NERDTree
+
+"Hide help hint
+let NERDTreeMinimalUI=1
+
 " CtrlP
 let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_use_caching = 1
