@@ -44,7 +44,7 @@ function! SetTwoSpace()
 	setlocal smarttab
 	setlocal expandtab
 endfunction
-nnoremap <leader>2 :call SetTwoSpace()
+nnoremap <leader>2 :call SetTwoSpace()<CR>
 
 function! SetFourSpace()
 	setlocal tabstop=4
@@ -53,7 +53,7 @@ function! SetFourSpace()
 	setlocal smarttab
 	setlocal expandtab
 endfunction
-nnoremap <leader>4 :call SetTwoSpace()
+nnoremap <leader>4 :call SetTwoSpace()<CR>
 
 " Search up the directory tree looking for tags file
 set tags=./tags;/
@@ -105,7 +105,7 @@ nnoremap <leader>a :Ack
 nnoremap <leader>t :Tlist<cr>
 
 " List active buffers (requires CtrlP plugin)
-nnoremap <leader>b :CtrlPBuffer<cr>
+nnoremap <leader>b :CtrlPBuffer<CR>
 
 " window navigation
 nnoremap <leader>h <C-w>h
