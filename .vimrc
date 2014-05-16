@@ -197,6 +197,7 @@ let Tlist_Display_Tag_Scope = 1
 
 "Use jshint for javascript syntax checking
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_json_checkers=['jsonlint']
 
 "NERDTree
 
@@ -224,6 +225,10 @@ endif
 
 " Clean up VimFugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" Set filetype for json to json instead of javascript
+autocmd BufRead,BufNewFile *.json setlocal filetype=json
+autocmd BufRead,BufNewFile *.json setlocal syntax=javascript
 
 " Load local vim config
 if filereadable(expand("~/.dotfiles/local.vim"))
