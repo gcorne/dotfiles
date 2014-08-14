@@ -101,7 +101,7 @@ nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 " Ack shortcut
 nnoremap <leader>a :Ack 
 
-" TList shortcut
+" Tagbar shortcut
 nnoremap <leader>t :TagbarToggle<cr>
 
 " List active buffers (requires CtrlP plugin)
@@ -182,25 +182,7 @@ let vimclojure#NailgunClient = $HOME . "/bin/ng"
 " PHP
 autocmd Syntax php normal zR
 
-" TagList
-let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-" Displaying tags for only one file
-let Tlist_Show_One_File = 1
-" let Tlist_Process_File_Always = 1
-" set the names of flags
-let tlist_php_settings = 'php;c:class;f:function;d:constant'
-let tlist_javascript_settings = 'javascript;o:object;f:function'
-" close all folds except for current file
-let Tlist_File_Fold_Auto_Close = 1
-" make tlist pane active when opened
-let Tlist_GainFocus_On_ToggleOpen = 1
-" width of window
-let Tlist_WinWidth = 40
-" close tlist when a selection is made
-let Tlist_Close_On_Select = 1
-let Tlist_Display_Tag_Scope = 1
-
-
+" Tagbar
 let g:tagbar_left = 1
 let g:tagbar_autoclose = 1
 let g:tagbar_compact = 1
@@ -218,11 +200,8 @@ let g:tagbar_type_php = {
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_jsx_checkers = ['jsxhint']
 let g:syntastic_json_checkers=['jsonlint']
+let g:syntastic_css_checkers=['']
 
-"NERDTree
-
-"Hide help hint
-let NERDTreeMinimalUI=1
 
 "GitGutter
 "

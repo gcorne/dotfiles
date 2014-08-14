@@ -14,7 +14,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
 
 Bundle 'majutsushi/tagbar'
-" Bundle 'techlivezheng/tagbar-phpctags'
 
 " PHP Bundles
 " debugger for PHP+Xdebug
