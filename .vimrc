@@ -195,6 +195,20 @@ let Tlist_WinWidth = 40
 let Tlist_Close_On_Select = 1
 let Tlist_Display_Tag_Scope = 1
 
+
+let g:tagbar_left = 1
+let g:tagbar_autoclose = 1
+let g:tagbar_compact = 1
+
+let g:tagbar_type_php = {
+    \ 'kinds' : [
+        \ 'i:interfaces',
+        \ 'c:classes',
+        \ 'd:constant definitions:1:0',
+        \ 'f:functions',
+    \ ],
+\ }
+
 "Use jshint for javascript syntax checking
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_json_checkers=['jsonlint']
