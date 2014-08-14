@@ -211,6 +211,7 @@ let g:tagbar_type_php = {
 
 "Use jshint for javascript syntax checking
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_jsx_checkers = ['jsxhint']
 let g:syntastic_json_checkers=['jsonlint']
 
 "NERDTree
@@ -243,6 +244,9 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 " Set filetype for json to json instead of javascript
 autocmd BufRead,BufNewFile *.json setlocal filetype=json
 autocmd BufRead,BufNewFile *.json setlocal syntax=javascript
+
+autocmd BufRead,BufNewFile *.jsx setlocal filetype=jsx
+autocmd BufRead,BufNewFile *.jsx setlocal syntax=javascript
 
 " Load local vim config
 if filereadable(expand("~/.dotfiles/local.vim"))
