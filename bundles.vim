@@ -2,7 +2,6 @@ Bundle 'gmarik/vundle'
 
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'mileszs/ack.vim'
 Bundle 'msanders/snipmate.vim'
