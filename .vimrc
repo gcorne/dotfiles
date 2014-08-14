@@ -102,7 +102,7 @@ nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 nnoremap <leader>a :Ack 
 
 " TList shortcut
-nnoremap <leader>t :Tlist<cr>
+nnoremap <leader>t :TagbarToggle<cr>
 
 " List active buffers (requires CtrlP plugin)
 nnoremap <leader>b :CtrlPBuffer<CR>
