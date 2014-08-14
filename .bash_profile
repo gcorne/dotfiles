@@ -46,5 +46,10 @@ gitbranches() {
 	for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r
 }
 
+# Homebrew bash completions
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+	. $(brew --prefix)/etc/bash_completion
+fi
+
 # Load a local configuration file if it exists
 [ -r ~/.bash_local ] && source ~/.bash_local
