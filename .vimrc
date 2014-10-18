@@ -197,11 +197,11 @@ let g:tagbar_type_php = {
 \ }
 
 "Use jshint for javascript syntax checking
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_jsx_checkers = ['jsxhint']
-let g:syntastic_json_checkers=['jsonlint']
-let g:syntastic_css_checkers=['']
+let g:syntastic_javascript_checkers = ["jshint"]
+let g:syntastic_json_checkers=["jsonlint"]
+let g:syntastic_css_checkers=[""]
 
+autocmd BufEnter *.jsx let b:syntastic_checkers=["jsxhint"]
 
 "GitGutter
 "
@@ -229,10 +229,6 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 autocmd BufRead,BufNewFile *.json setlocal filetype=json
 autocmd BufRead,BufNewFile *.json setlocal syntax=javascript
 
-autocmd BufRead,BufNewFile *.jsx setlocal filetype=jsx
-autocmd BufRead,BufNewFile *.jsx setlocal syntax=javascript
-
-" Load local vim config
 if filereadable(expand("~/.dotfiles/local.vim"))
 	source ~/.dotfiles/local.vim
 endif
