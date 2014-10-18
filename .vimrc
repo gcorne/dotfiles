@@ -1,5 +1,5 @@
 set ai                  " auto indenting
-set history=100000      " keep ## lines of history
+set history=10000      " keep ## lines of history
 set ruler               " show the cursor position
 syntax on               " syntax highlighting
 
@@ -229,6 +229,7 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 autocmd BufRead,BufNewFile *.json setlocal filetype=json
 autocmd BufRead,BufNewFile *.json setlocal syntax=javascript
 
+" Load local vim config
 if filereadable(expand("~/.dotfiles/local.vim"))
 	source ~/.dotfiles/local.vim
 endif
