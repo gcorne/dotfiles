@@ -55,6 +55,13 @@ function! SetFourSpace()
 endfunction
 nnoremap <leader>4 :call SetTwoSpace()<CR>
 
+function! SetTabs()
+	setlocal tabstop=4
+	setlocal shiftwidth=4
+	setlocal softtabstop=4
+	setlocal noexpandtab
+endfunction
+
 " Search up the directory tree looking for tags file
 set tags=./tags;/
 
