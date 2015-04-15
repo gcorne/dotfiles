@@ -1,20 +1,37 @@
-set ai                  " auto indenting
-set history=10000      " keep ## lines of history
-set ruler               " show the cursor position
-syntax on               " syntax highlighting
+" auto indenting
+set ai
 
+" keep ## lines of history
+set history=10000
+
+" show the cursor position
+set ruler
+
+" syntax highlighting
+syntax on
+
+" set leader used in key bindings
 let mapleader = ","
 
 set ignorecase
-set smartcase			" if lowercase, case insensitve else case sensitive
-set gdefault			" apply substitutions globally
-set hlsearch            " highlight the last searched term
-set incsearch			" Enable incremental search
+
+" if lowercase, case insensitve else case sensitive
+set smartcase
+
+" apply substitutions globally
+set gdefault
+
+" highlight the last searched term
+set hlsearch
+
+" enable incremental search
+set incsearch
 
 " clear search highlighting quickly
 nnoremap <leader><space> :noh<cr>
 
-set hidden				" allow a buffer with pending changes to be hidden
+" allow a buffer with pending changes to be hidden
+set hidden
 set background=dark
 
 " disable error sounds
@@ -34,8 +51,8 @@ set noexpandtab
 set backspace=indent,eol,start
 set wrap
 
-set mouse=a              " Enable basic mouse behavior such as resizing buffers.
-set clipboard=unnamed    " yank and paste with the system clipboard
+" Enable basic mouse behavior such as resizing buffers.
+set mouse=a
 
 function! SetTwoSpace()
 	setlocal tabstop=2
@@ -156,20 +173,20 @@ endif
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" load Vundle bundles
-if filereadable(expand("~/.dotfiles/bundles.vim"))
-  source ~/.dotfiles/bundles.vim
+" load Vundle plugins
+if filereadable(expand("~/.dotfiles/plugins.vim"))
+  source ~/.dotfiles/plugins.vim
 endif
 
-if filereadable(expand("~/.dotfiles/bundles-local.vim"))
-  source ~/.dotfiles/bundles-local.vim
+if filereadable(expand("~/.dotfiles/plugins-local.vim"))
+  source ~/.dotfiles/plugins-local.vim
 endif
 
 " install bundles for the first time
 if vundle_installing == 1
 	echo "Installing Bundles, please ignore key map error messages"
 	echo ""
-	:BundleInstall
+	:PluginInstall
 endif
 
 filetype plugin on " use the file type plugins
