@@ -31,3 +31,6 @@ Bundle 'jelera/vim-javascript-syntax'
 Bundle 'nono/vim-handlebars'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'mephux/vim-jsfmt'
+
+" Rust
+Plugin 'rust-lang/rust.vim'
