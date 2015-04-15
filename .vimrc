@@ -129,6 +129,7 @@ nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>g :set number!<CR>:GitGutterToggle<CR>
 nnoremap <leader>] :TagbarToggle<CR>
+nnoremap <leader>v :vnew
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
