@@ -1,0 +1,55 @@
+snippet int
+	/**
+	 * Internal dependencies
+	 */
+snippet fn
+	function() {
+
+	},
+snippet rcc
+	/**
+	 * External dependencies
+	 */
+	var React = require( 'react' );
+
+	var ${1:ClassName} = React.createClass( {
+
+	} );
+
+	module.exports = $1;
+snippet cdm
+	componentDidMount: function() {
+		${1}
+	},
+snippet cdup
+	componentDidUpdate: function(prevProps, prevState) {
+		${1}
+	},
+snippet cwm
+	componentWillMount: function() {
+		${1}
+	},
+snippet cwr
+	componentWillReceiveProps: function(nextProps) {
+		${1}
+	},
+snippet cwun
+	componentWillUnmount: function() {
+		${1}
+	},
+snippet cwu
+	componentWillUpdate: function(nextProps, nextState) {
+		${1}
+	},
+snippet gdp
+	getDefaultProps: function() {
+		return {};
+	},
+snippet gis
+	getInitialState: function() {
+		return {};
+	},
+snippet render
+	render: function() {
+		return ${1};
+	}
