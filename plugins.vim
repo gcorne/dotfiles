@@ -8,6 +8,7 @@ Plugin 'msanders/snipmate.vim'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-markdown'
+Plugin 'editorconfig/editorconfig-vim'
 
 " Git integration
 Plugin 'tpope/vim-fugitive'
