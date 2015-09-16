@@ -46,6 +46,23 @@ gitbranches() {
 	for k in `git branch|perl -pe s/^..//`;do echo -e `git show --pretty=format:"%Cgreen%ci %Cblue%cr%Creset" $k|head -n 1`\\t$k;done|sort -r
 }
 
+github_pr() {
+	branch=$(git symbolic-ref --short -q HEAD)
+	if [ -n "$branch" ]
+	then
+		if [ "$branch" == "master" ]; then
+			echo "Switch to a feature branch"
+			exit 1
+		fi
+
+		git push --set-upstream origin "$branch" && hub pull-request -o
+	else
+		exit 1
+	fi
+}
+
+alias pr="github_pr"
+
 # Homebrew bash completions
 if [ -n "$(which brew)" ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
 	. $(brew --prefix)/etc/bash_completion
