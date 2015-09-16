@@ -224,12 +224,12 @@ let g:tagbar_type_php = {
     \ ],
 \ }
 
-"Use jshint for javascript syntax checking
-let g:syntastic_javascript_checkers = ["jshint"]
+"Use eslint for javascript syntax checking
+let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_json_checkers=["jsonlint"]
 let g:syntastic_css_checkers=[""]
 
-autocmd BufEnter *.jsx let b:syntastic_checkers=["jsxhint"]
+autocmd BufEnter *.jsx let b:syntastic_checkers=["eslint"]
 
 "GitGutter
 "
