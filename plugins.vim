@@ -31,7 +31,7 @@ Plugin 'mustache/vim-mode'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'nono/vim-handlebars'
 Plugin 'digitaltoad/vim-jade'
-Plugin 'mephux/vim-jsfmt'
+Plugin 'gcorne/vim-esformatter'
 
 " Rust
 Plugin 'rust-lang/rust.vim'

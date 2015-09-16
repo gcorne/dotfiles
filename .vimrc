@@ -148,6 +148,9 @@ nnoremap <leader>g :set number!<CR>:GitGutterToggle<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader>v :vnew
 
+nnoremap <leader>es :Esformatter
+vnoremap <leader>es :Esformatter
+
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
 \ if ! exists("g:leave_my_cursor_position_alone") |
