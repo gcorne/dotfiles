@@ -44,10 +44,11 @@ set nowritebackup
 set noswapfile
 
 set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set autoindent
-set noexpandtab
+set smarttab
+set expandtab
 set backspace=indent,eol,start
 set wrap
 
@@ -55,25 +56,22 @@ set wrap
 set mouse=a
 
 function! SetTwoSpace()
-	setlocal tabstop=2
-	setlocal softtabstop=2
 	setlocal shiftwidth=2
+	setlocal softtabstop=2
 	setlocal smarttab
 	setlocal expandtab
 endfunction
 nnoremap <leader>2 :call SetTwoSpace()<CR>
 
 function! SetFourSpace()
-	setlocal tabstop=4
-	setlocal softtabstop=4
 	setlocal shiftwidth=4
+	setlocal softtabstop=4
 	setlocal smarttab
 	setlocal expandtab
 endfunction
 nnoremap <leader>4 :call SetTwoSpace()<CR>
 
 function! SetTabs()
-	setlocal tabstop=4
 	setlocal shiftwidth=4
 	setlocal softtabstop=4
 	setlocal noexpandtab
