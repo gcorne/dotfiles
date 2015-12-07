@@ -222,12 +222,37 @@ let g:tagbar_type_php = {
     \ ],
 \ }
 
+" Set filetype for json to json instead of javascript for linting
+autocmd BufRead,BufNewFile *.json setlocal filetype=json
+autocmd BufRead,BufNewFile *.json setlocal syntax=javascript
+
+autocmd BufRead,BufNewFile *.jsx setlocal filetype=javascript
+autocmd BufRead,BufNewFile *.jsx setlocal syntax=javascript
+
+
+" Check for a project specific version of eslint
+function SyntasticESlintChecker()
+  let l:npm_bin = ''
+  let l:eslint = 'eslint'
+
+  if executable('npm')
+      let l:npm_bin = split(system('npm bin'), '\n')[0]
+  endif
+
+  if strlen(l:npm_bin) && executable(l:npm_bin . '/eslint')
+    let l:eslint = l:npm_bin . '/eslint'
+  endif
+
+  let b:syntastic_javascript_eslint_exec = l:eslint
+endfunction
+
+
 "Use eslint for javascript syntax checking
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_json_checkers=["jsonlint"]
 let g:syntastic_css_checkers=[""]
 
-autocmd BufEnter *.jsx let b:syntastic_checkers=["eslint"]
+autocmd FileType javascript :call SyntasticESlintChecker()
 
 "GitGutter
 "
@@ -251,9 +276,6 @@ endif
 " Clean up VimFugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
-" Set filetype for json to json instead of javascript
-autocmd BufRead,BufNewFile *.json setlocal filetype=json
-autocmd BufRead,BufNewFile *.json setlocal syntax=javascript
 
 " Load local vim config
 if filereadable(expand("~/.dotfiles/local.vim"))
