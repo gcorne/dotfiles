@@ -68,5 +68,8 @@ if [ -n "$(which brew)" ] && [ -f $(brew --prefix)/etc/bash_completion ]; then
 	. $(brew --prefix)/etc/bash_completion
 fi
 
+# customize prompt if the git prompt function has been loaded
+[ -n $(type -t __git_ps1) ] && export PS1='$(__git_ps1 "\[\033[0;36m\](%s)\[\033[0m\]") \w\$ '
+
 # Load a local configuration file if it exists
 [ -r ~/.bash_local ] && source ~/.bash_local
