@@ -9,6 +9,7 @@ Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-markdown'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'bling/vim-airline'
 
 " Git integration
 Plugin 'tpope/vim-fugitive'
@@ -25,13 +26,16 @@ Plugin 'gcorne/PIV'
 Plugin 'tpope/vim-fireplace'
 Plugin 'guns/vim-clojure-static'
 
+" Sass/CSS
+Plugin 'gcorne/vim-sass-lint'
+
 " JavaScript bundles
-Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'mustache/vim-mode'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'nono/vim-handlebars'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'gcorne/vim-esformatter'
+Plugin 'kchmck/vim-coffee-script'
 
 " Rust
 Plugin 'rust-lang/rust.vim'

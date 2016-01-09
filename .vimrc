@@ -251,6 +251,7 @@ endfunction
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_json_checkers=["jsonlint"]
 let g:syntastic_css_checkers=[""]
+let g:syntastic_sass_checkers=["sass_lint"]
 
 autocmd FileType javascript :call SyntasticESlintChecker()
 
