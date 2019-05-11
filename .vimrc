@@ -69,13 +69,14 @@ function! SetFourSpace()
 	setlocal smarttab
 	setlocal expandtab
 endfunction
-nnoremap <leader>4 :call SetTwoSpace()<CR>
+nnoremap <leader>4 :call SetFourSpace()<CR>
 
 function! SetTabs()
 	setlocal shiftwidth=4
 	setlocal softtabstop=4
 	setlocal noexpandtab
 endfunction
+nnoremap <leader>0 :call SetTabs()<CR>
 
 " Search up the directory tree looking for tags file
 set tags=./tags;/
@@ -140,14 +141,16 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+
+"nnoremap <C-]> :ALEGoToDefinition<CR>
+
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>g :set number!<CR>:GitGutterToggle<CR>
 nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader>v :vnew
+nnoremap <leader>p :ALEFix<CR>
 
-nnoremap <leader>es :Esformatter
-vnoremap <leader>es :Esformatter
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
@@ -229,6 +232,7 @@ autocmd BufRead,BufNewFile *.json setlocal syntax=javascript
 autocmd BufRead,BufNewFile *.jsx setlocal filetype=javascript
 autocmd BufRead,BufNewFile *.jsx setlocal syntax=javascript
 
+autocmd BufRead,BufNewFile *.lyaml setlocal filetype=yaml
 
 " Check for a project specific version of eslint
 function SyntasticESlintChecker()
@@ -246,14 +250,49 @@ function SyntasticESlintChecker()
   let b:syntastic_javascript_eslint_exec = l:eslint
 endfunction
 
+" Check for a project specific version of sasslint
+function SyntasticSassChecker()
+  let l:npm_bin = ''
+  let l:sass_lint = 'sass-lint'
+
+  if executable('npm')
+      let l:npm_bin = split(system('npm bin'), '\n')[0]
+  endif
+
+  if strlen(l:npm_bin) && executable(l:npm_bin . '/sass-lint')
+    let l:sass_lint = l:npm_bin . '/sass-lint'
+  endif
+
+  echo l:sass_lint
+  let b:syntastic_sass_sasslint_exec = l:sass_lint
+endfunction
+
 
 "Use eslint for javascript syntax checking
 let g:syntastic_javascript_checkers = ["eslint"]
 let g:syntastic_json_checkers=["jsonlint"]
 let g:syntastic_css_checkers=[""]
-let g:syntastic_sass_checkers=["sass_lint"]
+let g:syntastic_sass_checkers=["sasslint"]
+let g:syntastic_scss_checkers=["sasslint"]
 
 autocmd FileType javascript :call SyntasticESlintChecker()
+autocmd FileType sass :call SyntasticSassChecker()
+
+function! QuickFixOpenAll()
+  if empty(getqflist())
+	return
+  endif
+  let s:prev_val = ""
+  for d in getqflist()
+	let s:curr_val = bufname(d.bufnr)
+	if (s:curr_val != s:prev_val)
+		exec "edit " . s:curr_val
+	endif
+	let s:prev_val = s:curr_val
+  endfor
+endfunction
+
+command! QuickFixOpenAll call QuickFixOpenAll()
 
 "GitGutter
 "
@@ -263,7 +302,7 @@ let g:gitgutter_enabled = 0
 " CtrlP
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_use_caching = 0
-let g:ctrlp_working_path_mode = 0
+let g:ctrlp_working_path_mode = 'r'
 let g:ctrlp_max_files = 0
 
 if executable('ag')
@@ -277,6 +316,10 @@ endif
 " Clean up VimFugitive buffers
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
+"Ale
+let g:ale_fixers = {
+\ 'javascript': ['prettier'],
+\}
 
 " Load local vim config
 if filereadable(expand("~/.dotfiles/local.vim"))

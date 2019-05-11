@@ -10,7 +10,7 @@ alias qlf='qlmanage -p "$@" >& /dev/null'
 
 export HISTSIZE=100000
 export HISTTIMEFORMAT="%F %R%z "
-export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoredups:ignorespace
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
@@ -73,3 +73,8 @@ fi
 
 # Load a local configuration file if it exists
 [ -r ~/.bash_local ] && source ~/.bash_local
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Added by nex: https://git.hubteam.com/HubSpot/nex
+. ~/.hubspot/shellrc
