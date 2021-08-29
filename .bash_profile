@@ -1,6 +1,6 @@
 [ -r ~/.bashrc ] && source ~/.bashrc
 
-export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/bin:/usr/local/bin:/Applications/MacVim.app/Contents/bin:$PATH"
 export PS1='\h:\w\$ '
 export EDITOR=vim
 

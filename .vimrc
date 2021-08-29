@@ -1,5 +1,5 @@
 " auto indenting
-set ai
+set autoindent
 
 " keep ## lines of history
 set history=10000
@@ -46,11 +46,13 @@ set noswapfile
 set tabstop=4
 set shiftwidth=2
 set softtabstop=2
-set autoindent
 set smarttab
 set expandtab
 set backspace=indent,eol,start
 set wrap
+
+" Open vertical splits on the right
+set splitright
 
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
@@ -178,12 +180,12 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " load Vundle plugins
-if filereadable(expand("~/.dotfiles/plugins.vim"))
-  source ~/.dotfiles/plugins.vim
+if filereadable(expand("~/dotfiles/plugins.vim"))
+  source ~/dotfiles/plugins.vim
 endif
 
-if filereadable(expand("~/.dotfiles/plugins-local.vim"))
-  source ~/.dotfiles/plugins-local.vim
+if filereadable(expand("~/dotfiles/plugins-local.vim"))
+  source ~/dotfiles/plugins-local.vim
 endif
 
 " install bundles for the first time
@@ -234,49 +236,9 @@ autocmd BufRead,BufNewFile *.jsx setlocal syntax=javascript
 
 autocmd BufRead,BufNewFile *.lyaml setlocal filetype=yaml
 
-" Check for a project specific version of eslint
-function SyntasticESlintChecker()
-  let l:npm_bin = ''
-  let l:eslint = 'eslint'
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile gitcommit setlocal spell
 
-  if executable('npm')
-      let l:npm_bin = split(system('npm bin'), '\n')[0]
-  endif
-
-  if strlen(l:npm_bin) && executable(l:npm_bin . '/eslint')
-    let l:eslint = l:npm_bin . '/eslint'
-  endif
-
-  let b:syntastic_javascript_eslint_exec = l:eslint
-endfunction
-
-" Check for a project specific version of sasslint
-function SyntasticSassChecker()
-  let l:npm_bin = ''
-  let l:sass_lint = 'sass-lint'
-
-  if executable('npm')
-      let l:npm_bin = split(system('npm bin'), '\n')[0]
-  endif
-
-  if strlen(l:npm_bin) && executable(l:npm_bin . '/sass-lint')
-    let l:sass_lint = l:npm_bin . '/sass-lint'
-  endif
-
-  echo l:sass_lint
-  let b:syntastic_sass_sasslint_exec = l:sass_lint
-endfunction
-
-
-"Use eslint for javascript syntax checking
-let g:syntastic_javascript_checkers = ["eslint"]
-let g:syntastic_json_checkers=["jsonlint"]
-let g:syntastic_css_checkers=[""]
-let g:syntastic_sass_checkers=["sasslint"]
-let g:syntastic_scss_checkers=["sasslint"]
-
-autocmd FileType javascript :call SyntasticESlintChecker()
-autocmd FileType sass :call SyntasticSassChecker()
 
 function! QuickFixOpenAll()
   if empty(getqflist())
@@ -319,9 +281,14 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 "Ale
 let g:ale_fixers = {
 \ 'javascript': ['prettier'],
+\ 'json': ['prettier'],
 \}
 
+let g:ale_fix_on_save = 1
+
+autocmd BufNewFile,BufRead *.html set ft=jinja.html
+
 " Load local vim config
-if filereadable(expand("~/.dotfiles/local.vim"))
-	source ~/.dotfiles/local.vim
+if filereadable(expand("~/dotfiles/local.vim"))
+	source ~/dotfiles/local.vim
 endif
