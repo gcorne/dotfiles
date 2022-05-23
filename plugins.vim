@@ -7,7 +7,9 @@ Plugin 'mileszs/ack.vim'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'tpope/vim-unimpaired'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'bling/vim-airline'
+Plugin 'chriskempson/base16-vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'plasticboy/vim-markdown'
 Plugin 'junegunn/goyo.vim'
