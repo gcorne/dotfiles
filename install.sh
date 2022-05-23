@@ -10,4 +10,5 @@ ln -s $DIR/.gvimrc $HOME/.gvimrc
 
 ln -s $DIR/.ctags $HOME/.ctags
 ln -s $DIR/.bash_profile $HOME/.bash_profile
+ln -s $DIR/.zprofile $HOME/.zprofile
 ln -s $DIR/.screenrc $HOME/.screenrc
