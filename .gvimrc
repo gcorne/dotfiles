@@ -1,4 +1,4 @@
-set guifont=Consolas\ for\ BBEdit:h14,Menlo:h14
+set guifont=Source\ Code\ Pro:h16,Consolas\ for\ BBEdit:h14,Menlo:h14
 set fu
 "macm File.New\ Tab key=<D-T>
 "macm File.Open\ Tab\.\.\. key=<D-C-t>
