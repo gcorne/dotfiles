@@ -286,8 +286,6 @@ let g:ale_fixers = {
 
 let g:ale_fix_on_save = 1
 
-autocmd BufNewFile,BufRead *.html set ft=jinja.html
-
 " Load local vim config
 if filereadable(expand("~/dotfiles/local.vim"))
 	source ~/dotfiles/local.vim
