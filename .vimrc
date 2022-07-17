@@ -118,7 +118,9 @@ nmap k gk
 " :1000  - remember 1000 items in command-line history
 " %    - remember the buffer list (if vim started without a file arg)
 " n    - set name of viminfo file
-set viminfo='100,\"50,:1000,%,n~/.vim/.viminfo
+if !has('nvim')
+  set viminfo='100,\"50,:1000,%,n~/.vim/.viminfo
+endif
 
 " strip all whitespace from current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
@@ -126,11 +128,8 @@ nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
 " Ack shortcut
 nnoremap <leader>a :Ack 
 
-" Tagbar shortcut
-nnoremap <leader>t :TagbarToggle<cr>
-
-" List active buffers (requires CtrlP plugin)
-nnoremap <leader>b :CtrlPBuffer<CR>
+" List active buffers
+nnoremap <leader>b :Buffers<CR>
 
 " window navigation
 nnoremap <leader>h <C-w>h
@@ -143,15 +142,15 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+let $FZF_DEFAULT_COMMAND='rg --files'
+nnoremap <C-p> :Files<CR>
 
-"nnoremap <C-]> :ALEGoToDefinition<CR>
 
-nnoremap <leader>d :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
 nnoremap <leader>g :set number!<CR>:GitGutterToggle<CR>
-nnoremap <leader>] :TagbarToggle<CR>
 nnoremap <leader>v :vnew
 nnoremap <leader>p :ALEFix<CR>
+
+
 
 
 " When editing a file, always jump to the last cursor position
@@ -216,20 +215,6 @@ let vimclojure#NailgunClient = $HOME . "/bin/ng"
 " PHP
 autocmd Syntax php normal zR
 
-" Tagbar
-let g:tagbar_left = 1
-let g:tagbar_autoclose = 1
-let g:tagbar_compact = 1
-
-let g:tagbar_type_php = {
-    \ 'kinds' : [
-        \ 'i:interfaces',
-        \ 'c:classes',
-        \ 'd:constant definitions:1:0',
-        \ 'f:functions',
-    \ ],
-\ }
-
 " Set filetype for json to json instead of javascript for linting
 autocmd BufRead,BufNewFile *.json setlocal filetype=json
 autocmd BufRead,BufNewFile *.json setlocal syntax=javascript
@@ -282,24 +267,34 @@ endif
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 "Ale
+
+nnoremap <silent> gr :ALEFindReferences<CR>
+nnoremap K :ALEHover<CR>
+nmap <silent> <leader>aj :ALENext<CR>
+nmap <silent> <leader>ak :ALEPrevious<CR>
+nnoremap <silent> gr :ALEFindReferences<CR>
+nnoremap <leader>rn :ALERename<CR>
+nnoremap <leader>qf :ALECodeAction<CR>
+vnoremap <leader>qf :ALECodeAction<CR>
+
+autocmd FileType typescript map <buffer> <c-]> :ALEGoToDefinition<CR>
+autocmd FileType typescriptreact map <buffer> <c-]> :ALEGoToDefinition<CR>
+
 let g:ale_fixers = {
-\ 'javascript': ['prettier'],
+\ 'javascript': ['prettier', 'eslint'],
+\ 'typescript': ['prettier', 'eslint'],
+\ 'typescriptreact': ['prettier', 'eslint'],
 \ 'json': ['prettier'],
 \}
 
 let g:ale_fix_on_save = 1
+
+let base16colorspace=256
+
+" airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'tomorrow'
 
-" Load local vim config
-if filereadable(expand("~/dotfiles/local.vim"))
-	source ~/dotfiles/local.vim
-endif
-
-
-let base16colorspace=256
-" air-line
-let g:airline_powerline_fonts = 1
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -328,3 +323,8 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ' '
 let g:airline_symbols.dirty = ' ⚡'
+
+" Load local vim config
+if filereadable(expand("~/dotfiles/local.vim"))
+	source ~/dotfiles/local.vim
+endif
