@@ -7,5 +7,6 @@
 bundle
 *.log
 *.tmp
+antigen.zsh
 bundles-local.vim
 local.vim
