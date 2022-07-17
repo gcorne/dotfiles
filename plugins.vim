@@ -1,15 +1,19 @@
 Plugin 'gmarik/vundle'
 
-Plugin 'kien/ctrlp.vim'
-Plugin 'w0rp/ale'
+" Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+Plugin 'dense-analysis/ale'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'mileszs/ack.vim'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'tpope/vim-unimpaired'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+
+Plugin 'github/copilot.vim'
 
 " Markdown
 Plugin 'plasticboy/vim-markdown'
