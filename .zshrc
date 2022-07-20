@@ -19,6 +19,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
+[ -f $HOME/.p10k.zsh ] && source $HOME/.p10k.zsh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
+
+[ -f $HOME/local.zsh ] && source $HOME/local.zsh
+
