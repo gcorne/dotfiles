@@ -4,7 +4,7 @@ source $HOME/dotfiles/antigen.zsh
 antigen use oh-my-zsh
 
 antigen bundle git
-
+antigen bundle ripgrep
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme romkatv/powerlevel10k
 

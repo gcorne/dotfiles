@@ -1,18 +1,22 @@
-export HOMEBREW_PREFIX="/opt/homebrew";
-export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-export HOMEBREW_REPOSITORY="/opt/homebrew";
-export HOMEBREW_SHELLENV_PREFIX="/opt/homebrew";
-export PATH="$HOME/bin:/Applications/MacVim.app/Contents/bin:/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
-export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
-export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
-export EDITOR=vim
+export ZSH_HOST_OS=$(uname | awk '{print tolower($0)}')
+export EDITOR=nvim
+export PATH="$HOME/bin${PATH+:$PATH}";
 
-if type brew &>/dev/null; then
+case $ZSH_HOST_OS in
+  darwin*)
+  export HOMEBREW_PREFIX="/opt/homebrew";
+  export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+  export HOMEBREW_REPOSITORY="/opt/homebrew";
+  export HOMEBREW_SHELLENV_PREFIX="/opt/homebrew";
+  export PATH="/Applications/MacVim.app/Contents/bin:/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+  export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+  export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
   autoload -Uz compinit
   compinit
-fi
+;;
+esac
 
 export HISTORY_IGNORE="(ls|cd|cd -|pwd|exit|date|* --help)"
 
