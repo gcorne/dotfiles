@@ -1,6 +1,6 @@
 Plugin 'gmarik/vundle'
 
-" Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'dense-analysis/ale'

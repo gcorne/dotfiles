@@ -58,25 +58,25 @@ set splitright
 set mouse=a
 
 function! SetTwoSpace()
-	setlocal shiftwidth=2
-	setlocal softtabstop=2
-	setlocal smarttab
-	setlocal expandtab
+  setlocal shiftwidth=2
+  setlocal softtabstop=2
+  setlocal smarttab
+  setlocal expandtab
 endfunction
 nnoremap <leader>2 :call SetTwoSpace()<CR>
 
 function! SetFourSpace()
-	setlocal shiftwidth=4
-	setlocal softtabstop=4
-	setlocal smarttab
-	setlocal expandtab
+  setlocal shiftwidth=4
+  setlocal softtabstop=4
+  setlocal smarttab
+  setlocal expandtab
 endfunction
 nnoremap <leader>4 :call SetFourSpace()<CR>
 
 function! SetTabs()
-	setlocal shiftwidth=4
-	setlocal softtabstop=4
-	setlocal noexpandtab
+  setlocal shiftwidth=4
+  setlocal softtabstop=4
+  setlocal noexpandtab
 endfunction
 nnoremap <leader>0 :call SetTabs()<CR>
 
@@ -122,36 +122,6 @@ if !has('nvim')
   set viminfo='100,\"50,:1000,%,n~/.vim/.viminfo
 endif
 
-" strip all whitespace from current file
-nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
-
-" Ack shortcut
-nnoremap <leader>a :Ack 
-
-" List active buffers
-nnoremap <leader>b :Buffers<CR>
-
-" window navigation
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
-
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-let $FZF_DEFAULT_COMMAND='rg --files'
-nnoremap <C-p> :Files<CR>
-
-
-nnoremap <leader>g :set number!<CR>:GitGutterToggle<CR>
-nnoremap <leader>v :vnew
-nnoremap <leader>p :ALEFix<CR>
-
-
-
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
@@ -171,11 +141,11 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'base16_tomorrow_night'
 
 if !filereadable(vundle_readme)
-	echo "Installing Vundle.."
-	echo ""
-	silent !mkdir -p ~/.vim/bundle
-	silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-	let vundle_installing=1
+  echo "Installing Vundle.."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+  let vundle_installing=1
 endif
 
 set rtp+=~/.vim/bundle/vundle/
@@ -192,9 +162,9 @@ endif
 
 " install bundles for the first time
 if vundle_installing == 1
-	echo "Installing Bundles, please ignore key map error messages"
-	echo ""
-	:PluginInstall
+  echo "Installing Bundles, please ignore key map error messages"
+  echo ""
+  :PluginInstall
 endif
 
 filetype plugin on " use the file type plugins
@@ -202,6 +172,37 @@ filetype indent on
 filetype on
 
 colorscheme Tomorrow-Night
+
+" strip all whitespace from current file
+nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
+
+" Ack shortcut
+nnoremap <leader>a :Ack<space>
+
+" List active buffers
+nnoremap <leader>b :CtrlPBuffer<CR>
+
+" window navigation
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+tnoremap <leader><Esc> <C-\><C-n>
+
+
+let $FZF_DEFAULT_COMMAND='rg --files'
+let g:ctrlp_map = '<c-o>'
+nnoremap <C-p> :Files<CR>
+
+nnoremap <leader>g :set number!<CR>:GitGutterToggle<CR>
+nnoremap <leader>v :vnew
+nnoremap <leader>p :ALEFix<CR>
 
 " clojure
 let vimclojure#FuzzyIndent=1
@@ -230,15 +231,15 @@ autocmd BufRead,BufNewFile gitcommit setlocal spell
 
 function! QuickFixOpenAll()
   if empty(getqflist())
-	return
+    return
   endif
   let s:prev_val = ""
   for d in getqflist()
-	let s:curr_val = bufname(d.bufnr)
-	if (s:curr_val != s:prev_val)
-		exec "edit " . s:curr_val
-	endif
-	let s:prev_val = s:curr_val
+    let s:curr_val = bufname(d.bufnr)
+    if (s:curr_val != s:prev_val)
+      exec "edit " . s:curr_val
+    endif
+    let s:prev_val = s:curr_val
   endfor
 endfunction
 
@@ -326,5 +327,5 @@ let g:airline_symbols.dirty = ' ⚡'
 
 " Load local vim config
 if filereadable(expand("~/dotfiles/local.vim"))
-	source ~/dotfiles/local.vim
+  source ~/dotfiles/local.vim
 endif
