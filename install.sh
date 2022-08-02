@@ -14,6 +14,9 @@ ln -s $DIR/.zprofile $HOME/.zprofile
 ln -s $DIR/.p10k.zsh $HOME/.p10k.zsh
 ln -s $DIR/.fzf.zsh $HOME/.fzf.zsh
 
+# tmux
+ln -s $DIR/.tmux.conf $HOME/.tmux.conf
+
 # Vim
 ln -s $DIR/.vim $HOME/.vim
 ln -s $DIR/.vimrc $HOME/.vimrc
