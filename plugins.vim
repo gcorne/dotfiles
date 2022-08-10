@@ -27,6 +27,7 @@ Plugin 'tpope/vim-rails'
 
 " Git integration
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 Plugin 'airblade/vim-gitgutter'
 
 " Clojure bundles
