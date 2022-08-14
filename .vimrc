@@ -57,6 +57,8 @@ set splitright
 " Enable basic mouse behavior such as resizing buffers.
 set mouse=a
 
+set termguicolors
+
 function! SetTwoSpace()
   setlocal shiftwidth=2
   setlocal softtabstop=2
@@ -171,7 +173,7 @@ filetype plugin on " use the file type plugins
 filetype indent on
 filetype on
 
-colorscheme Tomorrow-Night
+colorscheme base16-tomorrow-night
 
 " strip all whitespace from current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>

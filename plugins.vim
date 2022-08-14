@@ -5,7 +5,6 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'dense-analysis/ale'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'tpope/vim-unimpaired'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'chriskempson/base16-vim'
