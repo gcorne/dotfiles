@@ -198,13 +198,30 @@ nnoremap <C-l> <C-w>l
 tnoremap <leader><Esc> <C-\><C-n>
 
 
-let $FZF_DEFAULT_COMMAND='rg --files'
-let g:ctrlp_map = '<c-o>'
-nnoremap <C-p> :Files<CR>
 
 nnoremap <leader>g :set number!<CR>:GitGutterToggle<CR>
 nnoremap <leader>v :vnew
 nnoremap <leader>p :ALEFix<CR>
+
+" fzf / ripgrep
+
+let $FZF_DEFAULT_COMMAND='rg --files'
+let $FZF_DEFAULT_OPTS="--multi --bind ctrl-a:select-all,ctrl-d:deselect-all"
+
+let g:ctrlp_map = '<c-O>'
+nnoremap <C-p> :Files<CR>
+
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-k': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
 " clojure
 let vimclojure#FuzzyIndent=1
