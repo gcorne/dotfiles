@@ -1,0 +1,2 @@
+--type-set=graphql:ext:gql,graphql
+--type-set=js:ext:js,mjs,cjs,esnext,jsx

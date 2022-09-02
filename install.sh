@@ -27,4 +27,7 @@ ln -s $DIR/.ctags $HOME/.ctags
 mkdir -p .config
 ln -s $DIR/nvim $HOME/.config/nvim
 
+# Ack
+ln -s $DIR/.ackrc $HOME/.ackrc
+
 ln -s $DIR/.bash_profile $HOME/.bash_profile
