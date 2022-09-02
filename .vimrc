@@ -242,6 +242,15 @@ autocmd BufRead,BufNewFile *.json setlocal syntax=javascript
 autocmd BufRead,BufNewFile *.jsx setlocal filetype=javascript
 autocmd BufRead,BufNewFile *.jsx setlocal syntax=javascript
 
+autocmd BufRead,BufNewFile *.mjs setlocal filetype=javascript
+autocmd BufRead,BufNewFile *.mjs setlocal syntax=javascript
+
+autocmd BufRead,BufNewFile *.cjs setlocal filetype=javascript
+autocmd BufRead,BufNewFile *.cjs setlocal syntax=javascript
+
+autocmd BufRead,BufNewFile *.esnext setlocal filetype=javascript
+autocmd BufRead,BufNewFile *.esnext setlocal syntax=javascript
+
 autocmd BufRead,BufNewFile *.lyaml setlocal filetype=yaml
 
 autocmd BufRead,BufNewFile *.md setlocal spell
