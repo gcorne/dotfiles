@@ -18,8 +18,6 @@ Plugin 'github/copilot.vim'
 " Markdown
 Plugin 'plasticboy/vim-markdown'
 Plugin 'junegunn/goyo.vim'
-Plugin 'amix/vim-zenroom2'
-Plugin 'junegunn/limelight.vim'
 
 " Ruby
 Plugin 'vim-ruby/vim-ruby'

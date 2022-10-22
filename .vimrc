@@ -196,8 +196,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 tnoremap <leader><Esc> <C-\><C-n>
-
-
+nnoremap <leader>m :Goyo
 
 nnoremap <leader>g :set number!<CR>:GitGutterToggle<CR>
 nnoremap <leader>v :vnew
@@ -296,7 +295,6 @@ endif
 autocmd BufReadPost fugitive://* set bufhidden=delete
 
 "Ale
-
 nnoremap <silent> gr :ALEFindReferences<CR>
 nnoremap K :ALEHover<CR>
 nmap <silent> <leader>aj :ALENext<CR>
@@ -304,7 +302,6 @@ nmap <silent> <leader>ak :ALEPrevious<CR>
 nnoremap <silent> gr :ALEFindReferences<CR>
 nnoremap <leader>rn :ALERename<CR>
 nnoremap <leader>qf :ALECodeAction<CR>
-vnoremap <leader>qf :ALECodeAction<CR>
 
 autocmd FileType typescript map <buffer> <c-]> :ALEGoToDefinition<CR>
 autocmd FileType typescriptreact map <buffer> <c-]> :ALEGoToDefinition<CR>
@@ -352,6 +349,9 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ' '
 let g:airline_symbols.dirty = ' ⚡'
+
+" markdown
+let g:vim_markdown_folding_disabled = 1
 
 " Load local vim config
 if filereadable(expand("~/dotfiles/local.vim"))
