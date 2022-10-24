@@ -207,8 +207,7 @@ nnoremap <leader>p :ALEFix<CR>
 let $FZF_DEFAULT_COMMAND='rg --files'
 let $FZF_DEFAULT_OPTS="--multi --bind ctrl-a:select-all,ctrl-d:deselect-all"
 
-let g:ctrlp_map = '<c-O>'
-nnoremap <C-p> :Files<CR>
+let g:ctrlp_cmd = 'Files'
 
 function! s:build_quickfix_list(lines)
   call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
