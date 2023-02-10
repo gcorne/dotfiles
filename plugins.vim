@@ -40,7 +40,6 @@ Plugin 'mustache/vim-mode'
 Plugin 'pangloss/vim-javascript'
 Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'nono/vim-handlebars'
-Plugin 'prettier/vim-prettier'
 Plugin 'leafgarland/typescript-vim'
 
 " GraphQL
@@ -48,3 +47,6 @@ Plugin 'jparise/vim-graphql'
 
 " Rust
 Plugin 'rust-lang/rust.vim'
+
+" Kotlin
+Plugin 'udalov/kotlin-vim'
