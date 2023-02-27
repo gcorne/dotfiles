@@ -1,52 +1,49 @@
-Plugin 'gmarik/vundle'
-
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'dense-analysis/ale'
-Plugin 'mileszs/ack.vim'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'chriskempson/base16-vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'dense-analysis/ale'
+Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-unimpaired'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'chriskempson/base16-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 
-Plugin 'github/copilot.vim'
+Plug 'github/copilot.vim'
 
 " Markdown
-Plugin 'plasticboy/vim-markdown'
-Plugin 'junegunn/goyo.vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'junegunn/goyo.vim'
 
 " Ruby
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
 
 " Git integration
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rhubarb'
-Plugin 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'airblade/vim-gitgutter'
 
 " Clojure bundles
-Plugin 'tpope/vim-fireplace'
-Plugin 'guns/vim-clojure-static'
+Plug 'tpope/vim-fireplace'
+Plug 'guns/vim-clojure-static'
 
 " Sass/CSS
-Plugin 'gcorne/vim-sass-lint'
+Plug 'gcorne/vim-sass-lint'
 
 " JavaScript/Typescript
-Plugin 'mustache/vim-mode'
-Plugin 'pangloss/vim-javascript'
-Plugin 'MaxMEllon/vim-jsx-pretty'
-Plugin 'nono/vim-handlebars'
-Plugin 'leafgarland/typescript-vim'
+Plug 'mustache/vim-mode'
+Plug 'pangloss/vim-javascript'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'nono/vim-handlebars'
+Plug 'leafgarland/typescript-vim'
 
 " GraphQL
-Plugin 'jparise/vim-graphql'
+Plug 'jparise/vim-graphql'
 
 " Rust
-Plugin 'rust-lang/rust.vim'
+Plug 'rust-lang/rust.vim'
 
 " Kotlin
-Plugin 'udalov/kotlin-vim'
+Plug 'udalov/kotlin-vim'

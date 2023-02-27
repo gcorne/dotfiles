@@ -133,27 +133,22 @@ autocmd BufReadPost *
 \ endif |
 \ endif
 
-filetype off
 
-" Setting up Vundle - the vim plugin bundler
-let vundle_installing=0
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'base16_tomorrow_night'
-
-if !filereadable(vundle_readme)
-  echo "Installing Vundle.."
-  echo ""
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-  let vundle_installing=1
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
 
-" load Vundle plugins
+
+" load plugins
+call plug#begin('~/.vim/plugged')
 if filereadable(expand("~/dotfiles/plugins.vim"))
   source ~/dotfiles/plugins.vim
 endif
@@ -161,19 +156,12 @@ endif
 if filereadable(expand("~/dotfiles/plugins-local.vim"))
   source ~/dotfiles/plugins-local.vim
 endif
-
-" install bundles for the first time
-if vundle_installing == 1
-  echo "Installing Bundles, please ignore key map error messages"
-  echo ""
-  :PluginInstall
-endif
-
-filetype plugin on " use the file type plugins
-filetype indent on
-filetype on
+call plug#end()
 
 colorscheme base16-tomorrow-night
+
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'base16_tomorrow_night'
 
 " strip all whitespace from current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
