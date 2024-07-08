@@ -1,5 +1,5 @@
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'dense-analysis/ale'
 Plug 'mileszs/ack.vim'
