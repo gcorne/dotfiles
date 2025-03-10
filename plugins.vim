@@ -1,6 +1,10 @@
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+if has('nvim')
+  Plug 'ibhagwan/fzf-lua'
+else
+  Plug 'junegunn/fzf.vim'
+endif
 Plug 'dense-analysis/ale'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-unimpaired'

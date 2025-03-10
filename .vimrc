@@ -341,6 +341,10 @@ let g:airline_symbols.dirty = ' ⚡'
 " markdown
 let g:vim_markdown_folding_disabled = 1
 
+if has('nvim')
+  :lua require('fzf-lua').setup({'fzf-vim'})
+endif
+
 " Load local vim config
 if filereadable(expand("~/dotfiles/local.vim"))
   source ~/dotfiles/local.vim
