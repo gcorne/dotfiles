@@ -24,10 +24,15 @@ ln -s $DIR/.gvimrc $HOME/.gvimrc
 ln -s $DIR/.ctags $HOME/.ctags
 
 # Neovim
-mkdir -p .config
+mkdir -p $HOME/.config
 ln -s $DIR/nvim $HOME/.config/nvim
 
 # Ack
 ln -s $DIR/.ackrc $HOME/.ackrc
 
 ln -s $DIR/.bash_profile $HOME/.bash_profile
+
+
+# Ghostty
+mkdir -p $HOME/.config/ghostty
+ln -s $DIR/.config/ghostty/config $HOME/.config/ghostty/config
