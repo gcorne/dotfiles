@@ -160,8 +160,6 @@ call plug#end()
 
 colorscheme base16-tomorrow-night
 
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'base16_tomorrow_night'
 
 " strip all whitespace from current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<cr>
@@ -307,7 +305,30 @@ let base16colorspace=256
 
 " airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme = 'tomorrow'
+let g:airline_theme = 'base16_tomorrow_night'
+
+function! s:AirlineFirstLine(cmd) abort
+  if exists('*systemlist')
+    let l:out = systemlist(a:cmd)
+  else
+    let l:out = split(system(a:cmd), "\n")
+  endif
+  return len(l:out) ? l:out[0] : ''
+endfunction
+
+function! AirlineCustomHead() abort
+  if !executable('git')
+    return ''
+  endif
+  let l:head = s:AirlineFirstLine('git symbolic-ref --quiet --short HEAD 2>/dev/null')
+  if empty(l:head)
+    let l:head = s:AirlineFirstLine('git rev-parse --short HEAD 2>/dev/null')
+  endif
+  return l:head
+endfunction
+
+let g:airline#extensions#branch#custom_head = 'AirlineCustomHead'
+let g:airline#extensions#branch#vcs_priority = []
 
 
 if !exists('g:airline_symbols')
