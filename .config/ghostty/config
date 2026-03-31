@@ -1,4 +1,6 @@
+auto-update-channel = tip
 desktop-notifications = true
+split-inherit-working-directory = true
 
 macos-option-as-alt = left
 
