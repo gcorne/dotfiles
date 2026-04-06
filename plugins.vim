@@ -25,7 +25,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 
 " Git integration
-Plug 'tpope/vim-fugitive'
+Plug 'gcorne/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'airblade/vim-gitgutter'
 
