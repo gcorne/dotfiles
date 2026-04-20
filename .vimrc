@@ -176,6 +176,11 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 
+if has('nvim')
+  nnoremap <leader>f :AgentFeedback<CR>
+  xnoremap <leader>f :AgentFeedback<CR>
+endif
+
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k

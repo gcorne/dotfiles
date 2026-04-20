@@ -2,6 +2,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 if has('nvim')
   Plug 'ibhagwan/fzf-lua'
+  Plug 'gcorne/agent-feedback'
 else
   Plug 'junegunn/fzf.vim'
 endif
